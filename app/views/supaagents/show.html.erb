@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Applicationid:</strong>
+  <%= @supaagent.applicationid %>
+</p>
+
+<p>
+  <strong>idnumber:</strong>
+  <%= @supaagent.idnumber %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @supaagent.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @supaagent.email %>
+</p>
+
+<p>
+  <strong>Idimage:</strong>
+  <%= image_tag @supaagent.idimage.url %>
+</p>
+
+<p>
+  <strong>Validation:</strong>
+  <%= @supaagent.validation %>
+</p>
+
+<%= link_to 'Edit', edit_supaagent_path(@supaagent) %> |
+<%= link_to 'Back', supaagents_path %>

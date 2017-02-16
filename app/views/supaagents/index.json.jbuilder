@@ -1,0 +1,1 @@
+json.array! @supaagents, partial: 'supaagents/supaagent', as: :supaagent

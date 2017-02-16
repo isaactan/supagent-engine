@@ -1,0 +1,2 @@
+module SupaagentsHelper
+end

@@ -1,0 +1,44 @@
+<%= form_for(@supaagent) do |f| %>
+  <% if @supaagent.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@supaagent.errors.count, "error") %> prohibited this supaagent from being saved:</h2>
+
+      <ul>
+      <% @supaagent.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :"Please insert Your Application Id" %><br>
+    <%= f.text_field :applicationid %>
+    
+    <div class="field">
+    <%= f.label :"Please Insert Your I/C number" %><br>
+    <%= f.text_field :idnumber %>
+    
+  </div>
+  <div class="field">
+    <%= f.label :"Your name" %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :"Your email" %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :"please upload an image of your photoid in jpeg format" %><br>
+    <%= f.file_field :idimage %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :"Validation" unless @supaagent.new_record?%>
+    <%= f.check_box :validation unless @supaagent.new_record? %>
+    
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

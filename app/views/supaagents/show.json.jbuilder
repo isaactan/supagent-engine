@@ -1,0 +1,1 @@
+json.partial! "supaagents/supaagent", supaagent: @supaagent

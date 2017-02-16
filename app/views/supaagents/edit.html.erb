@@ -1,0 +1,10 @@
+<h1>Editing Supaagent</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', @supaagent %> |
+<%= link_to 'Back', supaagents_path %>
+<p>
+  <strong>Idimage:</strong>
+  <%= image_tag @supaagent.idimage.url %>
+</p>
