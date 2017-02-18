@@ -1,3 +1,74 @@
 // Place all the styles related to the Supaagents controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "lato";
+
+.applicationpage {
+  width: 360px;
+  padding: 5% 0 0;
+  margin: auto;
+}
+  
+.form-control
+{
+    font-family: 'Lato', sans-serif;
+    // font-weight: 400;
+    padding: 15px;
+    // // margin: 1px;
+    color: Black;
+    // // background-color:lightgrey;
+    // padding-top: 3%;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    box-sizing: border-box;
+    width: 100%;
+    
+} 
+
+.formbox {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  width: 40%;
+  margin: 0 auto 100px;
+  padding: 45px;
+  padding-top: 1%;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  padding-bottom: 10%;
+
+}
+
+h1 {
+  font-family: 'Lato', sans-serif;
+  font-size: 32px;
+  font-weight: 900;
+  color: #4c4c4c;
+  text-align: center;
+  padding-top: 5px;
+  margin-bottom: 10px;
+}
+
+body {
+//   background: #76b852; /* fallback for old browsers */
+//   background: -webkit-linear-gradient(right, #76b852, #8DC26F);
+//   background: -moz-linear-gradient(right, #76b852, #8DC26F);
+//   background: -o-linear-gradient(right, #76b852, #8DC26F);
+//   background: linear-gradient(to left, #76b852, #8DC26F);
+     background-image: url("http://workplace.supahands.com/assets/img/login-page-bg-bd4fc8266bff6d111cc57c12caad249b.png");
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;      
+}
+ .new_supaagent {
+ padding-top: 80px;
+ }
+ 
+p {
+    font-family: "Lato", sans-serif;
+}
+
+
+

@@ -10,35 +10,52 @@
       </ul>
     </div>
   <% end %>
+  
+     
+  <div class="formbox">
+     <h1>SupaAgent Application</h1>
+     
+     <div class="form-group"
 
-  <div class="field">
-    <%= f.label :"Please insert Your Application Id" %><br>
-    <%= f.text_field :applicationid %>
+    <div class="field">
+      <!--<h3>1. Please fill in your application ID provided in the email</h3>--->
+      <!--<label for="Applicationid">Application ID<br></label>-->
+      <%= f.text_field :applicationid, placeholder: "Application ID", class: "form-control", type: "text"%>
     
     <div class="field">
-    <%= f.label :"Please Insert Your I/C number" %><br>
-    <%= f.text_field :idnumber %>
+       <!--<h3>2.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</h3>-->
+      <%= f.text_field :idnumber, placeholder: "ID Number", class: "form-control" %>
+    </div>
     
+    <div class="field">
+      <!--<h3>3.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</h3>-->
+      <%= f.text_field :name, placeholder: "Name as per ID", class: "form-control" %>
+    </div>
+    
+    <div class="field">
+      <!--<h3>4.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</h3>-->
+    <%= f.text_field :email, placeholder: "Email", class: "form-control" %>
+    </div>
+    
+    <div class="field">
+     <h2>Please upload an image of your photoid in jpeg format</h2>
+      <%= f.file_field :idimage %>
+    </div>
+  
+    <div class="field">
+      <%= f.label :"Validation" unless @supaagent.new_record?%>
+      <%= f.check_box :validation unless @supaagent.new_record? %>
+    </div>
+    
+    <div class="field"
+      <p>By clicking Register, you agree on our <a href="#">terms and condition</a>.</p>
+    </div>
+     
+    <div class="actions">
+      <%= f.submit 'Submit my Application', :confirm => 'Your confirm message'%>
+    </div>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :"Your name" %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :"Your email" %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :"please upload an image of your photoid in jpeg format" %><br>
-    <%= f.file_field :idimage %>
   </div>
   
-  <div class="field">
-    <%= f.label :"Validation" unless @supaagent.new_record?%>
-    <%= f.check_box :validation unless @supaagent.new_record? %>
-    
-  </div>
-  <div class="actions">
-    <%= f.submit 'Submit my Application', :confirm => 'Your confirm message'%>
-  </div>
 <% end %>
