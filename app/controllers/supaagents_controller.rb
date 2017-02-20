@@ -1,6 +1,9 @@
 class SupaagentsController < ApplicationController
   before_action :set_supaagent, only: [:show, :edit, :update, :destroy]
-
+  http_basic_authenticate_with name: "isaac", password: "Supahands", only: [:destroy, :index,:show]
+  
+  
+ 
   # GET /supaagents
   # GET /supaagents.json
   def index
@@ -19,6 +22,7 @@ class SupaagentsController < ApplicationController
 
   # GET /supaagents/1/edit
   def edit
+    
   end
 
   # POST /supaagents
