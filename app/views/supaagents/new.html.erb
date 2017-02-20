@@ -1,5 +1,91 @@
-<h1>New Supaagent</h1>
+  <!--Rails logic for error- preventing save-->
+<%= form_for(@supaagent) do |f| %>
+  <% if @supaagent.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@supaagent.errors.count, "error") %> prohibited this supaagent from being saved:</h2>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', supaagents_path %>
+      <ul>
+      <% @supaagent.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <!--END-->
+  
+  <!--Form View-->
+     
+  <div class="formbox">
+     <h1>SupaAgent Application</h1>
+     <h3>Hey hey - this is the last step to officially becoming part of the Supafam :) just fill up this form and you will be set to go! 
+         You are also required to share with us an image of your identification card / passport + signed contract. </h3>
+     
+         <div class="field">
+       <!--<p> If it's a SupaAgent: #E1001 or #X1001. If it was a Campus Ambassador: #CA1001.</p>-->
+          <%= f.text_field :referralid, placeholder: "Insert the ID of the person who referred you to Supahands.", class: "form-control", type: "text"%>
+         </div>
+      
+         <div class="field">
+         <%= f.text_field :applicationid, placeholder: "Application ID", class: "form-control", type: "text"%>
+        </div>
+      
+        <div class="field">
+      <!--<h3>3.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</h3>-->
+          <%= f.text_field :bankname, placeholder: "Bank Name", class: "form-control" %>
+          </div>
+    
+        <div class="field">
+          <%= f.text_field :bankaccount, placeholder: "Bank Address", class: "form-control", type: "text"%>
+        </div>
+      
+         <div class="field">
+          <%= f.text_field :bankaddress, placeholder: "Bank Account Number", class: "form-control", type: "text"%>
+         </div>
+    
+         <div class="field">
+          <%= f.text_field :bankbranch, placeholder: "Bank Branch", class: "form-control", type: "text"%>
+         </div>
+     
+         <div class="field">
+          <%= f.text_field :bankswift, placeholder: "Bank Branch", class: "form-control", type: "text"%>
+         </div>
+        
+        <div class="field">
+      <!--<h3>3.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</h3>-->
+           <%= f.text_field :name, placeholder: "Name as per in your IC / Passport", class: "form-control" %>
+        </div>
+    
+        <div class="field">
+       <!--<h3>2.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</h3>-->
+         <%= f.text_field :idnumber, placeholder: "ID Number", class: "form-control" %>
+        </div>
+        
+    
+        <div class="field">
+      <!--<h3>4.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</h3>-->
+        <%= f.text_field :email, placeholder: "Email", class: "form-control" %>
+        </div>
+    
+        <div class="field">
+         <h2>Please upload an image of your IC/Passport or government issued </h2>
+          <%= f.file_field :idimage %>
+        </div>
+  
+        <div class="field">
+          <%= f.label :"Validation" unless @supaagent.new_record?%>
+          <%= f.check_box :validation unless @supaagent.new_record? %>
+        </div>
+    
+        <div class="field"
+        <br>
+         <p>By clicking Register, you agree on our <a href="#">terms and condition</a>.</p>
+        </div>
+     
+        <div class="actions">
+          <%= f.submit 'Submit my Application', data: { confirm: 'By clicking Register, you agree on our terms and condition'}%>
+        </div>
+    </div>
+  </div>
+  
+<% end %>

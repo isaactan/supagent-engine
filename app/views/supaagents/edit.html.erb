@@ -1,10 +1,52 @@
-<h1>Editing Supaagent</h1>
+<%= form_for(@supaagent) do |f| %>
+  <% if @supaagent.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@supaagent.errors.count, "error") %> prohibited this supaagent from being saved:</h2>
 
-<%= render 'form' %>
+      <ul>
+      <% @supaagent.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+    <div class="output">
+      <label for="Applicationid">Application ID<br></label>
+      <%= f.text_field :applicationid, placeholder: "Application ID", class: "form-output", :disabled=>true%>
+    
+    <div class="output">
+      <%= f.text_field :idnumber, placeholder: "ID Number", class: "form-output", :disabled=>true%>
+    </div>
+    
+    <div class="output">
+      <%= f.text_field :name, placeholder: "Name as per ID", class: "form-output", :disabled=>true %>
+    </div>
+    
+    <div class="output">
+      <%= f.text_field :bankname, placeholder: "Bank Name", class: "form-output", :disabled=>true %>
+    </div>
+    
+    <div class="output">
+    <%= f.text_field :email, placeholder: "Email", class: "form-output", :disabled=>true %>
+    </div>
+    
+  
+    <div class="field">
+      <%= f.label :"Validation" unless @supaagent.new_record?%>
+      <%= f.check_box :validation unless @supaagent.new_record? %>
+    </div>
+    
+     <div class="output">
+  <%= image_tag @supaagent.idimage.url, class: "imageoutput" %>
+</div>
+    
 
-<%= link_to 'Show', @supaagent %> |
-<%= link_to 'Back', supaagents_path %>
-<p>
-  <strong>Idimage:</strong>
-  <%= image_tag @supaagent.idimage.url %>
-</p>
+    <div class="actions">
+      <%= f.submit 'validated', :confirm => 'Your confirm message'%>
+    </div>
+    </div>
+  </div>
+  </div>
+  
+<% end %>
