@@ -68,18 +68,76 @@
         </div>
     
         <div class="field">
-         <h2>Please upload an image of your IC/Passport or government issued </h2>
-          <%= f.file_field :idimage %>
+         <p>Please upload an image of your IC/Passport or government issued ID </p>
+          <%= f.file_field :idimage, class:"image-upload"%>
         </div>
-  
+        
+        <p class = "seperator">.........................................................................................................................................................................</p>
+        
+        <h2>Section 2</h2>
+
         <div class="field">
           <%= f.label :"Validation" unless @supaagent.new_record?%>
           <%= f.check_box :validation unless @supaagent.new_record? %>
         </div>
+        
+        <div class="termscondtion">
+        <h1>Terms and Condition</h1>    
+        <h3>We are pleased to procure your services as a SupaAgent. The terms and conditions of your contract of services are outlined as below.</h3>
+
+<h3>1.CONTRACT FEE</h3>
+<p>
+Your fee will be RM3.50 per Hand (up to 20 minutes) assigned and completed to our satisfaction. Depending on your performance, fit and availability, you may be eligible for bonuses and other incentives. 
+You will be paid at the end of each month. You are to bear and administer your own Employee Provident Fund, Social Security Contribution, and income and service tax.
+</p>
+
+<h3>2.CONTRACT PERIOD</h3>
+<p>Not applicable</p>
+
+<h3>3.DATE OF COMMENCEMENT</h3>
+<p>Your service shall start immediately after agreeing to the contract.</p>
+
+<h3>4.DUTIES AND RESPONSIBILITIES</h3>
+<p>You shall report to the Directors, Manager or any other person appointed by the Directors in respect to all related functions; and you will be required to carry out such other duties and job functions as instructed.
+You must meet the committed hours and turnaround time for each project or task that you undertake within the stipulated time.</p>
+
+<h3>5.NOTICE OF TERMINATION OF SERVICE</h3>
+<p>Termination of service may be effected by either party in writing.</p>
+
+<h3>6.WORKING HOURS</h3>
+<p>The working hours are dependent on your schedule.</p>
+
+<h3>7.CONFIDENTIAL INFORMATION</h3>
+<p>It is a condition of your contract that you shall not either during the contract in this Company or after the termination of such contract, except with prior written consent of the Company; utilize or divulge to any person any information not known in the public domain, personal details, confidential information, creative data and intellectual property you may have acquired of the Company and all its Valued Clients, as a result of your contract with the Company.</p>
+
+<h3>8.ALTERATION</h3>
+<p>All Contract Material will be and will remain the property of the Company and the Company will be the absolute beneficial owner of the copyright in any Contract Material.
+If, for any reasons whatsoever, the Company wishes to alter these terms and conditions in any way, it serves the right to do so entirely at its discretion. Any alterations, amendments or additions to these terms and conditions of service shall be advised to you in writing.</p>
+
+<h3>COMMITMENTS OF A SupaAgent: </h3>
+
+<p>1. Being part of the Supahands team means to follow a certain set of rules to make sure that the relationship between Supahands and you as a SupaAgent is on the highest standard. You have to be reliable​, trustworthy and highly communicative ​in order to meet our requirements. 
+The number of SupaAgents is increasing each day and not providing these attributes makes a successful work relationship extremely difficult and inefficient.
+Each project has its own step by step guidelines which have to be followed in order to ensure the quantity and quality of work. Deviation from this might harm the project and the customer relationship. In addition, please note that using Google Mail and Slack is essential for each SupaAgent in order to keep the communication on the highest level.
+</p>
+<p>
+2. Our project managers are responsible for their team throughout all projects. In order to build the most suitable team, they determine SupaAgents regarding their skills and their past work.
+Therefore, project managers rate all new SupaAgents in their onboarding phase on a scale from one to five based on behavior, quality, reliability ​and speed​. We will stick our heads together with you once the average rating will drop below standards and we then will develop solutions to improve your work.
+</p>
+<p>
+3. Supahands grants each SupaAgent the highest degree of flexibility in terms of working time and working hours. In order to plan our business it is compulsory for each SupaAgent to submit their time schedule at ​least two weeks in advance​. Based on this availability we assign projects that you’re qualified for, however you’ll be able to enabled to work on different types of projects by accomplishing other assessments   we assign projects throughout all our SupaAgents. All other occasional leave events have to be communicated to our project managers. As mentioned before, communication is the key of a successful work relationship!
+<p>
+<p>    
+Kindly indicate your acceptance of the foregoing by clicking on the checkbox below, we would like to take this opportunity in welcoming you to our organisation.
+</p>
+
+<p>Thank you.</p>
+
+        </div>
     
         <div class="field"
         <br>
-         <p>By clicking Register, you agree on our <a href="#">terms and condition</a>.</p>
+         <span><%= f.check_box :terms, class:"term" %><p class = "checkbox">By clicking Register, you agree on our <a href="#">terms and condition</a>.</p></span>
         </div>
      
         <div class="actions">
