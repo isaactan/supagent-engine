@@ -36,7 +36,7 @@
           </div>
     
         <div class="field">
-          <%= f.text_field :bankacountnumber, placeholder: "Bank Address", class: "form-control", type: "text"%>
+          <%= f.text_field :bankaccount, placeholder: "Bank Address", class: "form-control", type: "text"%>
         </div>
       
          <div class="field">
@@ -50,17 +50,17 @@
          <div class="field">
           <%= f.text_field :bankswift, placeholder: "Bank Branch", class: "form-control", type: "text"%>
          </div>
+        
+        <div class="field">
+      <!--<h3>3.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</h3>-->
+           <%= f.text_field :name, placeholder: "Name as per in your IC / Passport", class: "form-control" %>
+        </div>
     
         <div class="field">
        <!--<h3>2.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</h3>-->
          <%= f.text_field :idnumber, placeholder: "ID Number", class: "form-control" %>
         </div>
-    
-        <div class="field">
-      <!--<h3>3.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</h3>-->
-           <%= f.text_field :name, placeholder: "Name as per ID", class: "form-control" %>
-        </div>
-    
+        
     
         <div class="field">
       <!--<h3>4.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</h3>-->
@@ -78,11 +78,12 @@
         </div>
     
         <div class="field"
+        <br>
          <p>By clicking Register, you agree on our <a href="#">terms and condition</a>.</p>
         </div>
      
         <div class="actions">
-          <%= f.submit 'Submit my Application', :confirm => 'Your confirm message'%>
+          <%= f.submit 'Submit my Application', data: { confirm: 'By clicking Register, you agree on our terms and condition'}%>
         </div>
     </div>
   </div>

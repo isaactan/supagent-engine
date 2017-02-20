@@ -28,7 +28,7 @@ class SupaagentsController < ApplicationController
 
     respond_to do |format|
       if @supaagent.save
-        format.html { redirect_to @supaagent, notice: 'Supaagent was successfully created.' }
+        format.html { redirect_to action: "thank_you", notice: 'Supaagent was successfully created.' }
         format.json { render :show, status: :created, location: @supaagent }
       else
         format.html { render :new }
@@ -69,6 +69,6 @@ class SupaagentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def supaagent_params
-      params.require(:supaagent).permit(:applicationid, :name, :email, :idimage, :validation, :idnumber)
+      params.require(:supaagent).permit(:applicationid, :name, :email, :idimage, :validation, :idnumber, :bankaccount, :bankaddress, :bankname, :bankswift, :referralid)
     end
 end
