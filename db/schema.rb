@@ -11,9 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170220035934) do
+ActiveRecord::Schema.define(version: 20170220083731) do
 
-  create_table "Supaagents", force: :cascade do |t|
+  create_table "supaagents", force: :cascade do |t|
     t.string   "applicationid"
     t.string   "name"
     t.string   "email"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20170220035934) do
     t.string   "bankbranch"
     t.string   "bankswift"
     t.string   "referralid"
+    t.boolean  "terms"
   end
 
 end

@@ -66,13 +66,37 @@ body {
  padding-top: 80px;
  }
  
-p {
+.checkbox {
     font-family: "Lato", sans-serif;
+    text-align: left;
 }
 
 .imagedisplay {
     max-height: 50px;
 }
 
+.term{
+    float:left;
+}
 
+div.termscondtion {
+   width:550px;
+   height:300px;
+   border:1px solid #ccc;
+   background:#f2f2f2;
+   padding:6px;
+   overflow:auto;
+}
+div.termscondtion p,
+div.termscondtion li {font:normal 11px/15px arial;color:#333;}
+div.termscondtion h3 {font:bold 14px/19px arial;color:#000;}
+div.termscondtion h4 {font:bold 12px/17px arial;color:#000;}
+div.termscondtion strong {color:#000;}
 
+.image-upload{
+    padding-bottom: 20px;
+}
+
+.seperator{
+    padding-bottom: 40px;
+}
