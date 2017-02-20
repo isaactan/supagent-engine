@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170216083820) do
+ActiveRecord::Schema.define(version: 20170220034703) do
 
   create_table "supaagents", force: :cascade do |t|
     t.string   "applicationid"
@@ -19,9 +19,15 @@ ActiveRecord::Schema.define(version: 20170216083820) do
     t.string   "email"
     t.string   "idimage"
     t.boolean  "validation"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.string   "idnumber"
+    t.string   "bankname"
+    t.string   "bankacountnumber"
+    t.string   "bankaddress"
+    t.string   "bankbranch"
+    t.string   "bankswift"
+    t.string   "referralid"
   end
 
 end
