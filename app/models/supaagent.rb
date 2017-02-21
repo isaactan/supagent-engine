@@ -10,5 +10,5 @@ class Supaagent < ActiveRecord::Base
     validates_presence_of :bankname, :message => "Bank Name is required"
     validates_presence_of :bankaddress, :message => "Bank Address is required"
     validates_presence_of :bankswift, :message => "Bank SWIFT code is required"
-    validates_presence_of :terms, :message => "checkbox"
+    validates_presence_of :terms, :message => "You forgot to tick the checkbox for Terms and Condition"
 end
