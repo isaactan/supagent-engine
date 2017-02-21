@@ -21,7 +21,7 @@
               </ul>
             </div>
           <% end %>
-     <p>You need to fill in the form with the required information and attach an image of your IC / Passport or Government Issued ID. Please ensure the image uploaded and details entered are a match. 
+     <p>You need to fill in the form with the required information and attach an image of your IC / Passport / Government Issued ID. Please ensure the image uploaded and details entered are a match. 
 <br><br>
 If you were referred to Supahands, make sure you put in the respective ID of the referee. <i>Example: #E1001, #X1001 or #CA1001.</i>  If you were not referred to by anyone, just move on to the next field.
 <br><br>
@@ -44,7 +44,7 @@ The Application ID (#B1001) can be found in the email that provided you with thi
       
       <div class="field">
        <!--<h3>2.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</h3>-->
-         <%= f.text_field :idnumber, placeholder: "ID Number", class: "form-control" %>
+         <%= f.text_field :idnumber, placeholder: "IC / Passport / Goverment Issued ID No.", class: "form-control" %>
         </div>
         
         <div class="field">
@@ -75,7 +75,7 @@ The Application ID (#B1001) can be found in the email that provided you with thi
         </div>
     
         <div class="field">
-         <p>Please upload an image of your <b>IC/Passport or government issued ID</b> </p>
+         <p>Please upload an image of your <b>IC / Passport / Government Issued ID</b> </p>
           <%= f.file_field :idimage, class:"image-upload"%>
         </div>
         
@@ -120,7 +120,7 @@ You must meet the committed hours and turnaround time for each project or task t
 <p>All Contract Material will be and will remain the property of the Company and the Company will be the absolute beneficial owner of the copyright in any Contract Material.
 If, for any reasons whatsoever, the Company wishes to alter these terms and conditions in any way, it serves the right to do so entirely at its discretion. Any alterations, amendments or additions to these terms and conditions of service shall be advised to you in writing.</p>
 
-<h3>COMMITMENTS OF A SupaAgent: </h3>
+<h3>COMMITMENTS OF A SUPAAGENT: </h3>
 
 <p>1. Being part of the Supahands team means to follow a certain set of rules to make sure that the relationship between Supahands and you as a SupaAgent is on the highest standard. You have to be reliable​, trustworthy and highly communicative ​in order to meet our requirements. 
 The number of SupaAgents is increasing each day and not providing these attributes makes a successful work relationship extremely difficult and inefficient.
@@ -143,7 +143,7 @@ Kindly indicate your acceptance of the foregoing by clicking on the checkbox bel
         <br>
         <div class="field"
         <br>
-         <span><%= f.check_box :terms, class:"term" %><p class = "checkbox">&nbsp;&nbsp;I have read and agree with above terms and conditions</a>.</p></span>
+         <span><%= f.check_box :terms, class:"term" %><p class = "checkbox">&nbsp;&nbsp;I have read and agree with the above terms and conditions</a>.</p></span>
         </div>
          <br>
         <div class="actions">
