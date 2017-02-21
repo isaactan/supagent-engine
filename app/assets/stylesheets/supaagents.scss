@@ -57,11 +57,14 @@ body {
 //   background: -moz-linear-gradient(right, #76b852, #8DC26F);
 //   background: -o-linear-gradient(right, #76b852, #8DC26F);
 //   background: linear-gradient(to left, #76b852, #8DC26F);
-     background-image: url("http://workplace.supahands.com/assets/img/login-page-bg-bd4fc8266bff6d111cc57c12caad249b.png");
+    //  background-image: url("http://workplace.supahands.com/assets/img/login-page-bg-bd4fc8266bff6d111cc57c12caad249b.png");
+    background: #76CCDB;
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;      
+  -moz-osx-font-smoothing: grayscale;
 }
+
+
  .new_supaagent {
  padding-top: 80px;
  }
@@ -99,4 +102,8 @@ div.termscondtion strong {color:#000;}
 
 .seperator{
     padding-bottom: 40px;
+}
+
+.thankyou{
+    background:#fff;
 }
