@@ -1,27 +1,29 @@
   <!--Rails logic for error- preventing save-->
-<%= form_for(@supaagent) do |f| %>
-  <% if @supaagent.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@supaagent.errors.count, "error") %> prohibited this supaagent from being saved:</h2>
 
-      <ul>
-      <% @supaagent.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
   
   <!--END-->
   
   <!--Form View-->
      
   <div class="formbox">
+    
      <h1>SupaAgent Details</h1>
      <h3>Congratulations - this is the final step to becoming a SupaAgent!</h3> 
+     <%= form_for(@supaagent) do |f| %>
+      <% if @supaagent.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@supaagent.errors.count, "error") %> prohibited this supaagent from being saved:</h2>
+        
+              <ul>
+              <% @supaagent.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
      <p>You need to fill in the form with the required information and attach an image of your IC / Passport or Government Issued ID. Please ensure the image uploaded and details entered are a match. 
 <br><br>
-If you were referred to Supahands, make sure you put in the respective ID of the referee. Example: #E1001, #X1001 or #CA1001.  If you were not referred to by anyone, just move on to the next field.
+If you were referred to Supahands, make sure you put in the respective ID of the referee. <i>Example: #E1001, #X1001 or #CA1001.</i>  If you were not referred to by anyone, just move on to the next field.
 <br><br>
 The Application ID (#B1001) can be found in the email that provided you with this link. 
 </p>
@@ -77,7 +79,7 @@ The Application ID (#B1001) can be found in the email that provided you with thi
           <%= f.file_field :idimage, class:"image-upload"%>
         </div>
         
-        <p class = "seperator">.....................................................................................................</p>
+        <hr style="border-top: 1px solid #f2f2f2;">
         
         <h2>Terms and Conditions</h2>
 
@@ -138,14 +140,14 @@ Kindly indicate your acceptance of the foregoing by clicking on the checkbox bel
 <p>Thank you.</p>
 
         </div>
-    
+        <br>
         <div class="field"
         <br>
-         <span><%= f.check_box :terms, class:"term" %><p class = "checkbox">By ticking the box, you are agreeing to our Terms & Conditions.</a>.</p></span>
+         <span><%= f.check_box :terms, class:"term" %><p class = "checkbox">&nbsp;&nbsp;I have read and agree with above terms and conditions</a>.</p></span>
         </div>
-     
+         <br>
         <div class="actions">
-          <%= f.submit 'Submit my Application', data: { confirm: 'By ticking the box, you are agreeing to our Terms & Conditions.'}%>
+          <%= f.submit 'Submit my Application', :class => 'btn-primary', data: { confirm: 'By ticking the box, you are agreeing to our Terms & Conditions.'}%>
         </div>
     </div>
   </div>
