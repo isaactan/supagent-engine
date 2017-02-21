@@ -11,7 +11,15 @@
     </div>
   <% end %>
   
-    <div class="output">
+    
+    
+    <!--IMAGE-->
+
+
+<table class="tg">
+  <tr>
+    <th class="sa-details">
+      <div class="output">
       <label for="Applicationid">Application ID<br></label>
       <%= f.text_field :applicationid, placeholder: "Application ID", class: "form-output", :disabled=>true%>
     
@@ -56,15 +64,20 @@
       <%= f.label :"Validation" unless @supaagent.new_record?%>
       <%= f.check_box :validation unless @supaagent.new_record? %>
     </div>
-    
-     <div class="output">
-  <%= image_tag @supaagent.idimage.url, class: "imageoutput" %>
-</div>
-    
-
-    <div class="actions">
-      <%= f.submit 'validated', :confirm => 'Your confirm message'%>
+         <div class="actions">
+      <%= f.submit 'validated', :class => 'btn-primary', :confirm => 'Your confirm message'%>
     </div>
+    </th>
+    
+    <th class="id-img">
+      <div class="output">
+        <%= image_tag @supaagent.idimage.url, class: "imageoutput" %>
+      </div>
+    </th>
+    
+  </tr>
+</table>
+    
     </div>
   </div>
   </div>
