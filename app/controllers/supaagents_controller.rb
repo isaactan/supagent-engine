@@ -1,6 +1,6 @@
 class SupaagentsController < ApplicationController
   before_action :set_supaagent, only: [:show, :edit, :update, :destroy]
-  http_basic_authenticate_with name: "isaac", password: "Supahands", only: [:destroy, :index,:show]
+  http_basic_authenticate_with name: ENV["USERNAME"], password: ENV["LOGINPASSWORD"], only: [:destroy, :index,:show]
   
   
  
