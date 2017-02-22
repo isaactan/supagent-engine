@@ -1,25 +1,32 @@
   <!--Rails logic for error- preventing save-->
-<%= form_for(@supaagent) do |f| %>
-  <% if @supaagent.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@supaagent.errors.count, "error") %> prohibited this supaagent from being saved:</h2>
 
-      <ul>
-      <% @supaagent.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
   
   <!--END-->
   
   <!--Form View-->
      
   <div class="formbox">
-     <h1>SupaAgent Application</h1>
-     <h3>Hey hey - this is the last step to officially becoming part of the Supafam :) just fill up this form and you will be set to go! 
-         You are also required to share with us an image of your identification card / passport + signed contract. </h3>
+    
+     <h1>SupaAgent Details</h1>
+     <h3>Congratulations - this is the final step to becoming a SupaAgent!</h3> 
+     <%= form_for(@supaagent) do |f| %>
+      <% if @supaagent.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@supaagent.errors.count, "error") %> prohibited this supaagent from being saved:</h2>
+        
+              <ul>
+              <% @supaagent.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+     <p>You need to fill in the form with the required information and attach an image of your IC / Passport / Government Issued ID. Please ensure the image uploaded and details entered are a match. 
+<br><br>
+If you were referred to Supahands, make sure you put in the respective ID of the referee. <i>Example: #E1001, #X1001 or #CA1001.</i>  If you were not referred to by anyone, just move on to the next field.
+<br><br>
+The Application ID (#B1001) can be found in the email that provided you with this link. 
+</p>
      
          <div class="field">
        <!--<p> If it's a SupaAgent: #E1001 or #X1001. If it was a Campus Ambassador: #CA1001.</p>-->
@@ -29,37 +36,37 @@
          <div class="field">
          <%= f.text_field :applicationid, placeholder: "Application ID", class: "form-control", type: "text"%>
         </div>
+        
+        <div class="field">
+      <!--<h3>3.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</h3>-->
+           <%= f.text_field :name, placeholder: "Name as per in your IC / Passport", class: "form-control" %>
+        </div>
       
+      <div class="field">
+       <!--<h3>2.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</h3>-->
+         <%= f.text_field :idnumber, placeholder: "IC / Passport / Goverment Issued ID No.", class: "form-control" %>
+        </div>
+        
         <div class="field">
       <!--<h3>3.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</h3>-->
           <%= f.text_field :bankname, placeholder: "Bank Name", class: "form-control" %>
           </div>
+          
+           <div class="field">
+          <%= f.text_field :bankaddress, placeholder: "Bank Account Number", class: "form-control", type: "text"%>
+         </div>
     
         <div class="field">
           <%= f.text_field :bankaccount, placeholder: "Bank Address", class: "form-control", type: "text"%>
         </div>
-      
-         <div class="field">
-          <%= f.text_field :bankaddress, placeholder: "Bank Account Number", class: "form-control", type: "text"%>
-         </div>
-    
-         <div class="field">
+        
+        <div class="field">
           <%= f.text_field :bankbranch, placeholder: "Bank Branch", class: "form-control", type: "text"%>
          </div>
      
          <div class="field">
           <%= f.text_field :bankswift, placeholder: "Bank SWIFT Code", class: "form-control", type: "text"%>
          </div>
-        
-        <div class="field">
-      <!--<h3>3.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</h3>-->
-           <%= f.text_field :name, placeholder: "Name as per in your IC / Passport", class: "form-control" %>
-        </div>
-    
-        <div class="field">
-       <!--<h3>2.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</h3>-->
-         <%= f.text_field :idnumber, placeholder: "ID Number", class: "form-control" %>
-        </div>
         
     
         <div class="field">
@@ -68,13 +75,13 @@
         </div>
     
         <div class="field">
-         <p>Please upload an image of your IC/Passport or government issued ID </p>
+         <p>Please upload an image of your <b>IC / Passport / Government Issued ID</b> </p>
           <%= f.file_field :idimage, class:"image-upload"%>
         </div>
         
-        <p class = "seperator">.........................................................................................................................................................................</p>
+        <hr style="border-top: 1px solid #f2f2f2;">
         
-        <h2>Section 2</h2>
+        <h2>Terms and Conditions</h2>
 
         <div class="field">
           <%= f.label :"Validation" unless @supaagent.new_record?%>
@@ -82,7 +89,6 @@
         </div>
         
         <div class="termscondtion">
-        <h1>Terms and Condition</h1>    
         <h3>We are pleased to procure your services as a SupaAgent. The terms and conditions of your contract of services are outlined as below.</h3>
 
 <h3>1.CONTRACT FEE</h3>
@@ -114,7 +120,7 @@ You must meet the committed hours and turnaround time for each project or task t
 <p>All Contract Material will be and will remain the property of the Company and the Company will be the absolute beneficial owner of the copyright in any Contract Material.
 If, for any reasons whatsoever, the Company wishes to alter these terms and conditions in any way, it serves the right to do so entirely at its discretion. Any alterations, amendments or additions to these terms and conditions of service shall be advised to you in writing.</p>
 
-<h3>COMMITMENTS OF A SupaAgent: </h3>
+<h3>COMMITMENTS OF A SUPAAGENT: </h3>
 
 <p>1. Being part of the Supahands team means to follow a certain set of rules to make sure that the relationship between Supahands and you as a SupaAgent is on the highest standard. You have to be reliable​, trustworthy and highly communicative ​in order to meet our requirements. 
 The number of SupaAgents is increasing each day and not providing these attributes makes a successful work relationship extremely difficult and inefficient.
@@ -134,14 +140,14 @@ Kindly indicate your acceptance of the foregoing by clicking on the checkbox bel
 <p>Thank you.</p>
 
         </div>
-    
+        <br>
         <div class="field"
         <br>
-         <span><%= f.check_box :terms, class:"term" %><p class = "checkbox">By clicking Register, you agree on our <a href="#">terms and condition</a>.</p></span>
+         <span><%= f.check_box :terms, class:"term" %><p class = "checkbox">&nbsp;&nbsp;I have read and agree with the above terms and conditions</a>.</p></span>
         </div>
-     
+         <br>
         <div class="actions">
-          <%= f.submit 'Submit my Application', data: { confirm: 'By clicking Register, you agree on our terms and condition'}%>
+          <%= f.submit 'Submit my Application', :class => 'btn-primary', data: { confirm: 'By ticking the box, you are agreeing to our Terms & Conditions.'}%>
         </div>
     </div>
   </div>
