@@ -1,35 +1,41 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Listing Supaagents</h1>
+  <div class="indexbox">
+<h2>Supahands Recruitment Platform</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th>Applicationid</th>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Idimage</th>
-      <th>Validation</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @supaagents.each do |supaagent| %>
-      <tr>
-        <td><%= supaagent.applicationid %></td>
-        <td><%= supaagent.name %></td>
-        <td><%= supaagent.email %></td>
-        <td><%= supaagent.idimage %></td>
-        <td><%= supaagent.validation %></td>
-        <td><%= link_to 'Show', supaagent %></td>
-        <td><%= link_to 'Edit', edit_supaagent_path(supaagent) %></td>
-        <td><%= link_to 'Destroy', supaagent, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
 
-<%= link_to 'New Supaagent', new_supaagent_path %>
+
+
+<%= grid(@tasks_grid) do |g|
+  
+   g.column name: "Time stamp", attribute: "created_at"  do |supaagent|
+    supaagent.created_at
+  end
+
+  g.column name: "Application ID", attribute: "applicationid"  do |supaagent|
+    supaagent.applicationid
+  end
+
+  g.column name: "Name" , attribute: "name" do |supaagent|
+    supaagent.name
+  end
+
+  g.column name: "Email", attribute: "email" do |supaagent|
+    supaagent.email
+  end
+
+  g.column name: "validation", attribute: "validation" do |supaagent|
+    supaagent.validation? ? 'Yes' : 'No'
+  end
+  
+  g.column name: "status", attribute: "status" do |supaagent|
+    supaagent.status
+  end
+
+
+   g.column do |supaagent|
+    link_to('Edit', edit_supaagent_path(supaagent))
+  end
+end -%>
+</div>

@@ -11,4 +11,16 @@ class Supaagent < ActiveRecord::Base
     validates_presence_of :bankaddress, :message => "Bank Address is required"
     validates_presence_of :bankswift, :message => "Bank SWIFT code is required"
     validates_presence_of :terms, :message => "You forgot to tick the checkbox for Terms and Condition"
+    
+    before_update :set_status
+    
+    def set_status
+        case(self.validation)  when true
+            self.status = 'Approve' 
+        when false
+            self.status = 'Pending'
+      end
+    end
+    
+    
 end

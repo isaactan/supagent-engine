@@ -1,5 +1,5 @@
 class SupaagentsController < ApplicationController
-  before_action :set_supaagent, only: [:show, :edit, :update, :destroy]
+  before_action :set_supaagent, only: [:show, :update, :destroy]
   http_basic_authenticate_with name: ENV["USERNAME"], password: ENV["LOGINPASSWORD"], only: [:destroy, :index,:show]
   
   
@@ -7,7 +7,9 @@ class SupaagentsController < ApplicationController
   # GET /supaagents
   # GET /supaagents.json
   def index
-    @supaagents = Supaagent.all
+    # @supaagents = Supaagent.all
+    @tasks_grid = initialize_grid(Supaagent)
+
   end
 
   # GET /supaagents/1
@@ -20,9 +22,13 @@ class SupaagentsController < ApplicationController
     @supaagent = Supaagent.new
   end
 
-  # GET /supaagents/1/edit
+  # GET /supaagents/1/edit Will come refactor it soon 23/3/2017
   def edit
-    
+    begin
+    @supaagent = Supaagent.find(params[:id]) 
+    rescue ActiveRecord::RecordNotFound
+    redirect_to action: "index"
+  end
   end
 
   # POST /supaagents
@@ -46,7 +52,7 @@ class SupaagentsController < ApplicationController
   def update
     respond_to do |format|
       if @supaagent.update(supaagent_params)
-        format.html { redirect_to @supaagent, notice: 'Supaagent was successfully updated.' }
+        format.html { redirect_to edit_supaagent_path(@supaagent.id+1), notice: 'Supaagent was successfully updated.' }
         format.json { render :show, status: :ok, location: @supaagent }
       else
         format.html { render :edit }
@@ -73,6 +79,9 @@ class SupaagentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def supaagent_params
-      params.require(:supaagent).permit(:applicationid, :name, :email, :idimage, :validation, :idnumber, :bankaccount, :bankaddress, :bankname, :bankswift, :referralid, :terms, :bankbranch)
+      params.require(:supaagent).permit(:applicationid, :name, :email, :idimage, :validation, :idnumber, :bankaccount, :bankaddress, :bankname, :bankswift, :referralid, :terms, :bankbranch, :status)
     end
+    
+
+    
 end
