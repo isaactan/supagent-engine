@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170323135356) do
+ActiveRecord::Schema.define(version: 20170327090336) do
 
   create_table "supaagents", force: :cascade do |t|
     t.string   "applicationid"
@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 20170323135356) do
     t.string   "referralid"
     t.boolean  "terms"
     t.string   "status"
+    t.string   "fieldname"
+    t.string   "bankcountry"
   end
 
 end
