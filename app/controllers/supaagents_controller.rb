@@ -79,7 +79,7 @@ class SupaagentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def supaagent_params
-      params.require(:supaagent).permit(:applicationid, :name, :email, :idimage, :validation, :idnumber, :bankaccount, :bankaddress, :bankname, :bankswift, :referralid, :terms, :bankbranch, :status)
+      params.require(:supaagent).permit(:applicationid, :name, :email, :idimage, :bankcountry, :validation, :idnumber, :bankaccount, :bankaddress, :bankname, :bankswift, :referralid, :terms, :bankbranch, :status)
     end
     
 
