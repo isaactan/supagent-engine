@@ -21,11 +21,11 @@
               </ul>
             </div>
           <% end %>
-     <p>You need to fill in the form with the required information and attach an image of your IC / Passport / Government Issued ID. Please ensure the image uploaded and details entered are a match. 
+     <p>You need to fill in the form with the required information and attach an image of your IC / Passport / Government Issued ID. Please ensure the image uploaded and IC/Passport/Government Issued ID are a match.
 <br><br>
 If you were referred to Supahands, make sure you put in the respective ID of the referee. <i>Example: #E1001, #X1001 or #CA1001.</i>  If you were not referred to by anyone, just move on to the next field.
 <br><br>
-The Application ID (#B1001) can be found in the email that provided you with this link. 
+The Application ID (#B1001 or #D000000) can be found in the email that provided you with this link. 
 </p>
      
          <div class="field">
@@ -64,7 +64,7 @@ The Application ID (#B1001) can be found in the email that provided you with thi
          </div>
     
         <div class="field">
-          <%= f.text_field :bankaccount, placeholder: "Bank Address", class: "form-control", type: "text"%>
+          <%= f.text_field :bankaccount, placeholder: "Bank Branch Address", class: "form-control", type: "text"%>
         </div>
         
         <div class="field">
@@ -78,11 +78,11 @@ The Application ID (#B1001) can be found in the email that provided you with thi
     
         <div class="field">
       <!--<h3>4.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</h3>-->
-        <%= f.text_field :email, placeholder: "Email", class: "form-control" %>
+        <%= f.text_field :email, placeholder: "Email (Same as used for SupaAgent Assestment", class: "form-control" %>
         </div>
     
         <div class="field">
-         <p>Please upload an image of your <b>IC / Passport / Government Issued ID</b> </p>
+         <p>Please upload an image of your <b>IC / Passport / Government Issued ID </b> that contains the IC / Passport / Government Issued ID No. that you've stated above. </p>
           <%= f.file_field :idimage, class:"image-upload"%>
         </div>
         
