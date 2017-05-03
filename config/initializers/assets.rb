@@ -6,5 +6,4 @@ CarrierWave.configure do |config|
       :region                 => ENV['AWS_REGION'] # Change this for different AWS region. Default is 'us-east-1'
   }
   config.fog_directory  = ENV['S3_BUCKET']
-  
 end

@@ -1,6 +1,3 @@
-<!--<script type="text/javascript" src="http://beneposto.pl/jqueryrotate/js/jQueryRotateCompressed.js"></script>-->
-  
-<table class="tg">
 <%= form_for(@supaagent) do |f| %>
   <% if @supaagent.errors.any? %>
     <div id="error_explanation">
@@ -13,73 +10,76 @@
       </ul>
     </div>
   <% end %>
- 
-<table class="editview">
-      <h2>Applicants Details</h2>
-  <tr><td>
-
-    <table>
-      <tr><td><b>Application Id: </b></td><td><b><%= @supaagent.applicationid %></b></td></tr>
-      <tr><td><b>ID Number: </b></td><td><b><%= @supaagent.idnumber %></b></td></tr>
-      <tr><td><b>Name:</b> </td><td><b><%= @supaagent.name %></b></td></tr>
-      <tr><td><b>Bank Name:</b> </td><td><b><%= @supaagent.bankname %></b></td></tr>
-      <tr><td><b>Email:</b> </td><td><b><%= @supaagent.email %></b></td></tr>
-      <tr><td><b>Bank Branch: </b></td><td><b><%= @supaagent.bankbranch %></b></td></tr>
-      <tr><td><b>Bank Address: </b></td><td><b><%= @supaagent.bankaddress %></b></td></tr>
-      <tr><td><b>Bank Account: </b></td><td><b><%= @supaagent.bankaccount %></b></td></tr>
-      <tr><td><b>Bank Swift:</b> </td><td><b><%= @supaagent.bankswift %></b></td></tr>
-      
-
-  </td></tr>
-    </table>
-   
- 
-    </table>
-     <div class= "validation">
-    <b>  <%= f.label :"Validation" unless @supaagent.new_record?%></b>
-      <%= f.check_box :validation unless @supaagent.new_record?%>
-      
-    </div>
-     <div class="actions">
-      <%= f.submit 'Confirm', :class => 'btn-primary', :confirm => 'Your confirm message'%>
-    </div>
-
-  
-    </div>
-      
-      <div class="indexbox2">
-        <body>
-          <img src="<%= @supaagent.idimage.url %>" id="img"/>
-         </body>
-      </div>
-      
-                <% end %>
-
-<script type="text/javascript">
-console.log("hi there");
-  var value = 0;
-  // $("#img").click(function(){
-  //   console.log("clicked in the rotation");
-  //   value +=90;
-  //   $(this).rotate({ animateTo: value});
-  // });
-  
-  $("#img").rotate({ 
-      bind: 
-        { 
-            click: function(){
-                console.log("clicked in the rotation");
-                value +=90;
-                $(this).rotate({ animateTo: value});
-            }
-        } 
-       
-    });
-// $(document).ready(function() {
-   
-
-  
-// });
-  </script>
   
     
+    
+    <!--IMAGE-->
+
+
+<table class="tg">
+  <tr>
+    <th class="sa-details">
+      <div class="output">
+      <label for="Applicationid">Application ID<br></label>
+      <%= f.text_field :applicationid, placeholder: "Application ID", class: "form-output", :disabled=>true%>
+    
+    <div class="output">
+      <%= f.text_field :idnumber, placeholder: "ID Number", class: "form-output", :disabled=>true%>
+    </div>
+    
+    <div class="output">
+      <%= f.text_field :name, placeholder: "Name as per ID", class: "form-output", :disabled=>true %>
+    </div>
+    
+    <div class="output">
+      <%= f.text_field :bankname, placeholder: "Bank Name", class: "form-output", :disabled=>true %>
+    </div>
+    
+    <div class="output">
+    <%= f.text_field :email, placeholder: "Email", class: "form-output", :disabled=>true %>
+    </div>
+    
+    <div class="output">
+    <%= f.text_field :bankname, placeholder: "Email", class: "form-output", :disabled=>true %>
+    </div>
+    
+    <div class="output">
+    <%= f.text_field :bankbranch, placeholder: "Email", class: "form-output", :disabled=>true %>
+    </div>
+    
+    <div class="output">
+    <%= f.text_field :bankaddress, placeholder: "Email", class: "form-output", :disabled=>true %>
+    </div>
+    
+    <div class="output">
+    <%= f.text_field :bankaccount, placeholder: "Email", class: "form-output", :disabled=>true %>
+    </div>
+    
+    <div class="output">
+    <%= f.text_field :bankswift, placeholder: "Email", class: "form-output", :disabled=>true %>
+    </div>
+    
+  
+    <div class="field">
+      <%= f.label :"Validation" unless @supaagent.new_record?%>
+      <%= f.check_box :validation unless @supaagent.new_record? %>
+    </div>
+         <div class="actions">
+      <%= f.submit 'validated', :class => 'btn-primary', :confirm => 'Your confirm message'%>
+    </div>
+    </th>
+    
+    <th class="id-img">
+      <div class="output">
+        <%= image_tag @supaagent.idimage.url, class: "imageoutput" %>
+      </div>
+    </th>
+    
+  </tr>
+</table>
+    
+    </div>
+  </div>
+  </div>
+  
+<% end %>
