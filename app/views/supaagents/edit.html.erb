@@ -1,4 +1,32 @@
 <!--<script type="text/javascript" src="http://beneposto.pl/jqueryrotate/js/jQueryRotateCompressed.js"></script>-->
+<script type="text/javascript">
+console.log("hi there");
+  var value = 0;
+  // $("#img").click(function(){
+  //   console.log("clicked in the rotation");
+  //   value +=90;
+  //   $(this).rotate({ animateTo: value});
+  // });
+  
+  $("#img").rotate({ 
+      bind: 
+        { 
+            click: function(){
+                console.log("clicked in the rotation");
+                value +=90;
+                $(this).rotate({ animateTo: value});
+            }
+        } 
+       
+    });
+// $(document).ready(function() {
+   
+
+  
+// });
+  </script>
+  
+    
   
 <table class="tg">
 <%= form_for(@supaagent) do |f| %>
@@ -55,31 +83,3 @@
       
                 <% end %>
 
-<script type="text/javascript">
-console.log("hi there");
-  var value = 0;
-  // $("#img").click(function(){
-  //   console.log("clicked in the rotation");
-  //   value +=90;
-  //   $(this).rotate({ animateTo: value});
-  // });
-  
-  $("#img").rotate({ 
-      bind: 
-        { 
-            click: function(){
-                console.log("clicked in the rotation");
-                value +=90;
-                $(this).rotate({ animateTo: value});
-            }
-        } 
-       
-    });
-// $(document).ready(function() {
-   
-
-  
-// });
-  </script>
-  
-    
