@@ -53,16 +53,14 @@ h1 {
 }
 
 body {
-//   background: #76b852; /* fallback for old browsers */
-//   background: -webkit-linear-gradient(right, #76b852, #8DC26F);
-//   background: -moz-linear-gradient(right, #76b852, #8DC26F);
-//   background: -o-linear-gradient(right, #76b852, #8DC26F);
-//   background: linear-gradient(to left, #76b852, #8DC26F);
-    //  background-image: url("http://workplace.supahands.com/assets/img/login-page-bg-bd4fc8266bff6d111cc57c12caad249b.png");
-    background: #7576A9;
-  font-family: "Roboto", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background: #76b852; /* fallback for old browsers */
+  background: -webkit-linear-gradient(right, #76b852, #8DC26F);
+  background: -moz-linear-gradient(right, #76b852, #8DC26F);
+  background: -o-linear-gradient(right, #76b852, #8DC26F);
+  background: linear-gradient(to left, #76b852, #8DC26F);
+      background-image: url("http://workplace.supahands.com/assets/img/login-page-bg-bd4fc8266bff6d111cc57c12caad249b.png");
+  font-family: "Lato";
+
 }
 
 
@@ -125,7 +123,8 @@ div.termscondtion strong {color:#000;}
 }
 
 .imageoutput {
-    width: 800px;
+    width: 500px;
+    height: 100%;
 }
 
 .tg {
@@ -507,6 +506,8 @@ table, th, td {
 table {
   width: 100%;
   display: table;
+
+  
 }
 
 table.bordered > thead > tr,
@@ -538,13 +539,13 @@ thead {
   border-bottom: 1px solid #d0d0d0;
 }
 
-td, th {
-  padding: 15px 5px;
-  display: table-cell;
-  text-align: left;
-  vertical-align: middle;
-  border-radius: 2px;
-}
+// td, th {
+//   padding: 15px 5px;
+//   display: table-cell;
+//   text-align: left;
+//   vertical-align: middle;
+//   border-radius: 2px;
+// }
 
 @media only screen and (max-width: 992px) {
   table.responsive-table {
@@ -2021,9 +2022,10 @@ h1 {
 }
 
 h2 {
-  font-size: 3.56rem;
+  font-size: 3 rem;
   line-height: 110%;
   margin: 1.78rem 0 1.424rem 0;
+  font-weight: 100px;
 }
 
 h3 {
@@ -3445,8 +3447,8 @@ button:focus {
 }
 
 label {
-  font-size: 0.8rem;
-  color: #9e9e9e;
+  font-size: 15px;
+  color: white;
 }
 
 .indexbox {
@@ -3454,7 +3456,7 @@ label {
   z-index: 1;
   background: #FFFFFF;
   width: 65%;
-  margin: 0 auto 100px;
+  margin: 0 auto 10px;
   padding: 20px 30px 45px 30px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
@@ -3486,4 +3488,43 @@ a.ui-state-default {
 
 .tr {
 color:white;
+}
+
+img {
+  display: block;
+}
+.rotate {
+  -webkit-transition-duration: 2s;
+  -moz-transition-duration: 2s;
+  -o-transition-duration: 2s;
+  transition-duration: 2s;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -o-transition-property: -o-transform;
+  transition-property: transform;
+}
+.rotated {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+img{
+width: 450px;
+height: 100%;
+margin-left: auto;
+margin-right: 100px;
+margin-top: -400px;
+
+}
+
+.editview {
+  width: 50%;
+  display: table;
+    text-align: center;
+    background: white;
+}
+
+.editview td, th {
+  border: solid 1px black;
 }
