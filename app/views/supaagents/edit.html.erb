@@ -43,9 +43,22 @@
       <%= f.check_box :validation unless @supaagent.new_record?%>
       
     </div>
+    
+         <div class= "validation">
+    <b>  <%= f.label :"Flagged" unless @supaagent.new_record?%></b>
+      <%= f.check_box :is_flagged unless @supaagent.new_record?%>
+      
+    </div>
+    
      <div class="actions">
       <%= f.submit 'Confirm', :class => 'btn-primary', :confirm => 'Your confirm message'%>
     </div>
+    
+     <div class="buttons">
+       <head>
+     <a href="http://supa-recruitment.supahands.com/supaagents" style="color: #fff; font-size:15px; text-decoration: underline;" :class= "btn blue" >  <b>Back</b> </a>
+    </div>
+    
 
   
     </div>
@@ -57,7 +70,6 @@
       </div>
       
                 <% end %>
-
 <script type="text/javascript">
 console.log("hi there");
   var value = 0;
