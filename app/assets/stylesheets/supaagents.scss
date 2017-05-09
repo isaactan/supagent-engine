@@ -3510,11 +3510,11 @@ img {
 }
 
 img{
-width: 600px;
+width: 650px;
 height: 100%;
 margin-left: auto;
 margin-right: 100px;
-margin-top: -450px;
+margin-top: -400px;
 
 }
 
@@ -3527,4 +3527,8 @@ margin-top: -450px;
 
 .editview td, th {
   border: solid 1px black;
+}
+
+a.button {
+  color: white;
 }
