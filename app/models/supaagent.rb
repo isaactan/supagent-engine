@@ -1,5 +1,5 @@
 class Supaagent < ActiveRecord::Base
-    attr_accessor :is_flagged
+    # attr_accessor :is_flagged
     #Avatar uploader using carrier wave
     mount_uploader :idimage, IdimageUploader
     validates_presence_of :applicationid, :message => "Please insert your Application ID"
@@ -21,9 +21,9 @@ class Supaagent < ActiveRecord::Base
         when false
             self.status = 'Pending'
       end
-      if self.is_flagged
-          self.status = "Flagged"
-      end
+    #   if self.is_flagged
+    #       self.status = "Flagged"
+    #   end
     end
     
     
