@@ -1,22 +1,4 @@
-<!--<script type="text/javascript" src="http://beneposto.pl/jqueryrotate/js/jQueryRotateCompressed.js"></script>-->
-<head>
-  <script type="text/javascript">
-console.log("rotatescript");
-  var value = 0;
-  
-  $("#img").rotate({ 
-      bind: 
-        { 
-            click: function(){
-                console.log("clicked in the rotation");
-                value +=90;
-                $(this).rotate({ animateTo: value});
-            }
-        } 
-       
-    });
-  </script>
-</head>
+
   
     
   
@@ -83,3 +65,42 @@ console.log("rotatescript");
       </div>
       
                 <% end %>
+<script type="text/javascript">
+console.log("hi there");
+  var value = 0;
+  // $("#img").click(function(){
+  //   console.log("clicked in the rotation");
+  //   value +=90;
+  //   $(this).rotate({ animateTo: value});
+  // });
+  
+  $("#img").rotate({ 
+      bind: 
+        { 
+            click: function(){
+                console.log("clicked in the rotation");
+                value +=90;
+                $(this).rotate({ animateTo: value});
+            }
+        } 
+       
+    });
+// $(document).ready(function() {
+   
+  
+// });
+  </script>
+  
+  <script type="text/javascript">
+$(document).ready(function(){    
+    //Check if the current URL contains '#'
+    if(document.URL.indexOf("#")==-1){
+        // Set the URL to whatever it was plus "#".
+        url = document.URL+"#";
+        location = "#";
+
+        //Reload the page
+        location.reload(true);
+    }
+});
+</script>
