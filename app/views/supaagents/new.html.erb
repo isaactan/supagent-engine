@@ -1,160 +1,263 @@
-  <!--Rails logic for error- preventing save-->
+<!--Rails logic for error- preventing save-->
 
-  
-  <!--END-->
-  
-  <!--Form View-->
-     
-  <div class="formbox">
-    
-     <h1>SupaAgent Details</h1>
-     <h3>Congratulations - this is the final step to becoming a SupaAgent!</h3> 
-     <%= form_for(@supaagent) do |f| %>
-      <% if @supaagent.errors.any? %>
-            <div id="error_explanation">
-              <h2><%= pluralize(@supaagent.errors.count, "error") %> prohibited this supaagent from being saved:</h2>
-        
-              <ul>
-              <% @supaagent.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-              <% end %>
-              </ul>
-            </div>
-          <% end %>
-     <p>You need to fill in the form with the required information and attach an image of your IC / Passport / Government Issued ID. Please ensure the image uploaded and IC/Passport/Government Issued ID are a match.
-<br><br>
-If you were referred to Supahands, make sure you put in the respective ID of the referee. <i>Example: #E1001, #X1001 or #CA1001.</i>  If you were not referred to by anyone, just move on to the next field.
-<br><br>
-The Application ID (#B1001 or #D000000) can be found in the email that provided you with this link. 
+
+ <!--END-->
+
+ <!--Form View-->
+
+ <div class="formbox">
+
+    <h1>SupaAgent Details</h1>
+    <h3>Congratulations - this is the final step to becoming a SupaAgent!</h3>
+    <%= form_for(@supaagent) do |f| %>
+     <% if @supaagent.errors.any? %>
+           <div id="error_explanation">
+             <h2><%= pluralize(@supaagent.errors.count, "error") %> prohibited this supaagent from being saved:</h2>
+
+             <ul>
+             <% @supaagent.errors.full_messages.each do |message| %>
+               <li><%= message %></li>
+             <% end %>
+             </ul>
+           </div>
+         <% end %>
+    <p>In order for verify you as a person (and not a robot) for security purposes, we will require you to fill in some personal details. We will also need your banking details in order to process your payments every month.<br> Please note that an incorrect banking account number would result in a delayed payment so please make sure to provide the correct banking account.
+   <p>Please rest assured that Supahands takes precautionary measures that ensures that your information is kept safe.If you have additional questions, please direct them to hello@supahands.com</p>
+   </p>
+   <br>
+   <br>
+   <br>
+
+        <div class="field">
+
+      <!--<p> If it's a SupaAgent: #E1001 or #X1001. If it was a Campus Ambassador: #CA1001.</p>-->
+         <%= f.text_field :referralid, placeholder: "Insert the SupaAgent ID of the person who referred you to Supahands. Example: #E1001, #X1001 or #CA1001.", class: "form-control", type: "text"%>
+        </div>
+
+        <div class="field">
+        <%= f.text_field :applicationid, placeholder: "Insert your Application ID starting with #B, #D or #F, which can be found in the email linking you to this website", class: "form-control", type: "text"%>
+       </div>
+
+       <div class="field">
+     <!--<h3>3.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</h3>-->
+          <%= f.text_field :name, placeholder: "Name as per in your IC / Passport", class: "form-control" %>
+       </div>
+
+     <div class="field">
+      <!--<h3>2.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</h3>-->
+        <%= f.text_field :idnumber, placeholder: "IC / Passport / Goverment Issued ID No.", class: "form-control" %>
+       </div>
+
+     <div class="field">
+      <!--<h3>2.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</h3>-->
+        <%= f.select :bankcountry, [["MY", "MY"], ["SG", "SG"], ["PH", "PH"], ["ID", "ID"]], {:prompt => "Select your bank country"}, {class: "form-control"} %>
+       </div>
+
+
+
+       <div class="field">
+     <!--<h3>3.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</h3>-->
+         <%= f.text_field :bankname, placeholder: "Bank Name", class: "form-control" %>
+         </div>
+
+         <div class="field">
+         <%= f.text_field :bankbranch, placeholder: "Bank Branch Name", class: "form-control", type: "text"%>
+        </div>
+
+
+
+       <div class="field">
+         <%= f.text_field :bankaccount, placeholder: "Bank Branch Full Address", class: "form-control", type: "text"%>
+       </div>
+
+       <div class="field">
+         <%= f.text_field :bankaddress, placeholder: "Bank Account Number (Saving or Current Account ONLY)", class: "form-control", type: "text"%>
+        </div>
+
+
+
+        <div class="field">
+         <%= f.text_field :bankswift, placeholder: "Bank SWIFT Code (You may look up your bank swift code here at www.theswiftcodes.com)", class: "form-control", type: "text"%>
+        </div>
+
+
+       <div class="field">
+     <!--<h3>4.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</h3>-->
+       <%= f.text_field :email, placeholder: "Email (Same as used for SupaAgent Assestment)", class: "form-control" %>
+       </div>
+
+       <div class="field">
+        <p>Please upload an image of your IC / Passport / Government Issued ID that matches the details provided above.  IMPORTANT: If you are not the bank account holder, please provide the ID of the bank account holder as well. Please combine them into 1 picture.
 </p>
-     
-         <div class="field">
-       <!--<p> If it's a SupaAgent: #E1001 or #X1001. If it was a Campus Ambassador: #CA1001.</p>-->
-          <%= f.text_field :referralid, placeholder: "Insert the ID of the person who referred you to Supahands.", class: "form-control", type: "text"%>
-         </div>
-      
-         <div class="field">
-         <%= f.text_field :applicationid, placeholder: "Application ID", class: "form-control", type: "text"%>
-        </div>
-        
-        <div class="field">
-      <!--<h3>3.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</h3>-->
-           <%= f.text_field :name, placeholder: "Name as per in your IC / Passport", class: "form-control" %>
-        </div>
-      
-      <div class="field">
-       <!--<h3>2.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</h3>-->
-         <%= f.text_field :idnumber, placeholder: "IC / Passport / Goverment Issued ID No.", class: "form-control" %>
-        </div>
-        
-      <div class="field">
-       <!--<h3>2.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</h3>-->
-         <%= f.text_field :bankcountry, placeholder: "Bank Country", class: "form-control" %>
-        </div>        
-        
-        
-        
-        <div class="field">
-      <!--<h3>3.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</h3>-->
-          <%= f.text_field :bankname, placeholder: "Bank Name", class: "form-control" %>
-          </div>
-          
-           <div class="field">
-          <%= f.text_field :bankaddress, placeholder: "Bank Account Number", class: "form-control", type: "text"%>
-         </div>
-    
-        <div class="field">
-          <%= f.text_field :bankaccount, placeholder: "Bank Branch Address", class: "form-control", type: "text"%>
-        </div>
-        
-        <div class="field">
-          <%= f.text_field :bankbranch, placeholder: "Bank Branch", class: "form-control", type: "text"%>
-         </div>
-     
-         <div class="field">
-          <%= f.text_field :bankswift, placeholder: "Bank SWIFT Code", class: "form-control", type: "text"%>
-         </div>
-        
-    
-        <div class="field">
-      <!--<h3>4.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</h3>-->
-        <%= f.text_field :email, placeholder: "Email (Same as used for SupaAgent Assestment", class: "form-control" %>
-        </div>
-    
-        <div class="field">
-         <p>Please upload an image of your <b>IC / Passport / Government Issued ID </b> that contains the IC / Passport / Government Issued ID No. that you've stated above. </p>
-          <%= f.file_field :idimage, class:"image-upload"%>
-        </div>
-        
-        <hr style="border-top: 1px solid #f2f2f2;">
-        
-        <h2>Terms and Conditions</h2>
+         <%= f.file_field :idimage, class:"image-upload"%>
+       </div>
 
-        <div class="field">
-          <%= f.label :"Validation" unless @supaagent.new_record?%>
-          <%= f.check_box :validation unless @supaagent.new_record? %>
-        </div>
-        
-        <div class="termscondtion">
-        <h3>We are pleased to procure your services as a SupaAgent. The terms and conditions of your contract of services are outlined as below.</h3>
+       <hr style="border-top: 1px solid #f2f2f2;">
 
-<h3>1.CONTRACT FEE</h3>
+       <h2>Terms and Conditions</h2>
+
+       <div class="field">
+         <%= f.label :"Validation" unless @supaagent.new_record?%>
+         <%= f.check_box :validation unless @supaagent.new_record? %>
+       </div>
+
+       <div class="termscondtion">
+       <h3>We are pleased to procure your services as a SupaAgent. The terms and conditions of your contract of services are set out below.</h3>
+
+
+
+<h3>1.COMMENCEMENT</h3>
 <p>
-Your fee will be RM3.50 per Hand (up to 20 minutes) assigned and completed to our satisfaction. Depending on your performance, fit and availability, you may be eligible for bonuses and other incentives. 
-You will be paid within ten Supahands business days of every month for the previous month. You are to bear and administer your own Employee Provident Fund, Social Security Contribution, and income and service tax.
+These terms and conditions shall form a binding legal agreement (“Agreement”) between you and Supahands Dotcom Sdn Bhd (“Company”) with effect from your acceptance herein.
 </p>
 
 <h3>2.CONTRACT PERIOD</h3>
-<p>Not applicable</p>
+<p>This Agreement shall continue to remain in full force and effect until terminated by either party in accordance
 
-<h3>3.DATE OF COMMENCEMENT</h3>
-<p>Your service shall start immediately after agreeing to the contract.</p>
+with Clause 5.</p>
+
+<h3>3.SERVICES & FEE</h3>
+<p>In consideration of the services rendered by you, we will be paying a service fee equivalent to approximately RM10.50 per hour,
+for the task assigned to you and completed to our satisfaction. Please note that the exact amount that you will receive per hour is
+dependant on the individual project rates as well as the speed in completing the required work. Depending on your performance,
+fit and availability, you may be eligible for additional incentives. You will be paid within the first ten (10) Business Days of
+of every month in respect of work completed in the previous month. You shall bear all cost and expenses incurred for the provision
+of the services unless otherwise agreed upon by the Company. You shall be responsible for the filing and payment of any income tax arising
+from your income or revenue generated pursuant to your services hereunder. <br><br>
+
+A “Business Day” shall mean a day on which the Company is open for business operations, excluding a Saturday,
+
+Sunday and any gazette public holiday for Kuala Lumpur.</p>
 
 <h3>4.DUTIES AND RESPONSIBILITIES</h3>
-<p>Being part of the Supahands team requires you to follow certain set of rules to make sure that the relationship between Supahands and you as a SupaAgent is of highest standard. You have to be reliable​, trustworthy and highly communicative ​in order to meet our requirements. Using Google Mail and Slack (messaging tool) is essential for each SupaAgent in order to keep the communication on the highest level.  The number of SupaAgents is increasing each day and not providing these attributes makes a successful work relationship extremely difficult and inefficient. </p>
+<p>Being part of the Supahands team requires you to follow certain set of rules to make sure that the relationship
 
+between Supahands and you as a SupaAgent is of highest standard. You have to be reliable, trustworthy and
 
-<p>You must adhere to all project or task guidelines and PM instructions in order to ensure the quantity and quality of work. Deviation from this might harm the project and the customer relationship. In addition, you must meet the committed hours and turnaround time for each project or task that you undertake within the stipulated time.  If you are unable to and wish to exit the project or task, you may do so but are allowed to do this a maximum of three (3) times only.  </p>
+highly communicative in order to meet our requirements. Using Google Mail and Slack (or any other messaging
 
-<p>You will only be accepted to projects or tasks for which you have passed the assessment.  You may gain access to other project types by taking and passing their respective assessments.  </p>
+tools that the Company may designate) is essential for each SupaAgent in order to keep the communication on
 
-<p>Our project managers are responsible for their team throughout all projects. In order to build the most suitable team, they accept SupaAgents to work on their projects depending on their skills and past performance. Therefore, project managers adhere to a rating scheme for SupaAgents which encompasses accountability, engagement, speed, accuracy, attitude, availability, and commitment.</p>
+the highest level. The number of SupaAgent is increasing each day and not providing these attributes makes a
+
+successful work relationship extremely difficult and inefficient.<br><br>
+
+You must adhere to all project or task guidelines and PM instructions in order to ensure the quantity and quality
+
+of work. Deviation from this might harm the project and the customer relationship. In addition, you must meet
+
+the committed hours and turnaround time for each project or task that you undertake within the stipulated
+
+time. If you are unable to and wish to exit the project or task, you may do so but are allowed to do this for a
+
+maximum of three (3) times only.<br><br>
+
+You will only be accepted to projects or tasks for which you have passed the internal assessment. You may gain
+
+access to other project types by taking and passing their respective assessments.<br><br>
+
+Our project managers are responsible for their team throughout all projects. In order to build the most suitable
+
+team, they accept SupaAgents to work on their projects depending on their skills and past performance.
+
+Therefore, project managers adhere to a rating scheme for SupaAgents which encompasses accountability,
+
+engagement, speed, accuracy, attitude, availability and commitment.</p>
 
 <h3>5.NOTICE OF TERMINATION OF SERVICE</h3>
-<p>Termination of service may be effected by either party in writing.</p>
+<p>Either party may terminate this Agreement by giving to the other party a written notice of not less than fourteen
 
-<h3>6.WORKING HOURS</h3>
-<p>The working hours are dependent on your schedule. Supahands grants each SupaAgent the highest degree of flexibility in terms of working time and working hours. In order to plan our business it is compulsory for each SupaAgent to submit their time schedule at ​least two weeks in advance​. All other occasional leave events have to be communicated to the project managers. As mentioned before, communication is the key of a successful work relationship!
-</p>
+(14) days. In the event of any breach by you of any provision, covenant, representation or warranty herein, the
 
-<h3>7.CONFIDENTIAL INFORMATION</h3>
-<p>It is a condition of your contract that you shall not either during the contract in this Company or after the termination of such contract, except with prior written consent of the Company; utilize or divulge to any person any information not known in the public domain, personal details, confidential information, creative data and intellectual property you may have acquired of the Company and all its Valued Clients, as a result of your contract with the Company.</p>
+Company may terminate this Agreement by written notice with immediate effect.</p>
 
-<p>All Contract Material will be and will remain the property of the Company and the Company will be the absolute beneficial owner of the copyright in any Contract Material.</p>
-</p>
+<h3>6.REPRESENTATION & WARRANTIES</h3>
+<p>You represent and warrant to the Company that: (a) you have the authority to enter into and perform the
 
-<h3>8.ALTERATION</h3>
-<p>All Contract Material will be and will remain the property of the Company and the Company will be the absolute beneficial owner of the copyright in any Contract Material. If, for any reasons whatsoever, the Company wishes to alter these terms and conditions in any way, it serves the right to do so entirely at its discretion. Any alterations, amendments or additions to these terms and conditions of service shall be advised to you in writing.
-</p>
+obligations hereunder and this Agreement constitutes a valid and binding obligation of yours and enforceable
+
+in accordance within its terms; (b) this Agreement does not create a material conflict of interest or default under
+
+any other agreement to which you are a party; (c) you comply in all material aspects with all laws, rules and
+
+regulations applicable to your provision of services hereunder; and (d) you possess valid proof of work eligibility
+
+and/or have obtained all relevant permits, approvals, consents or pass required for your rendering of services
+
+hereunder. <br><br>
+
+You shall cause your representations and warranties to remain true during the Contract Period. You shall
+
+promptly notify the Company in writing if any representation and warranty becomes untrue.
+
+<h3>7.INDEMNITY</h3>
+<p>You agree to indemnify and hold harmless the Company against all claims, damages, losses and expenses
+
+founded upon (i) your performance of, or failure to perform, the services and any other duties and
+
+responsibilities under this Agreement, or (ii) any of your breach of this Agreement.</p>
 
 
-<p>    
-<h4>Kindly indicate your acceptance of the foregoing by clicking on the checkbox below, we would like to take this opportunity in welcoming you to our organisation.</h4>
+<h3>8.CONFIDENTIAL INFORMATION</h3>
+<p>You shall hold in strict confidence any Confidential Information that has come to your knowledge during the
+
+Contract Period and shall not utilize or divulge to any person such Confidential Information without the prior
+
+written consent of the Company. All Confidential Information provided by the Company hereto shall be used by
+
+you solely for the purpose of rendering services pursuant to this Agreement. Confidential Information shall mean
+
+any business or technical information of confidential or proprietary nature related to the Company, its
+
+shareholders, directors, employees, agents, clients and advisors including without limitation the financial data,
+
+business and marketing plan, intellectual project rights, databases, specifications, formulations, forecasts and
+
+trade secrets, whether in written, visual, electronical or oral form, excluding any information which is already in
+
+the public domain or in your possession prior to disclosure by the Company.</p>
+
+<h3>9.INTELLECTUAL PROPERTY RIGHTS</h3>
+<p>All work produced by you pursuant to this Agreement and the right to the copyright and all other intellectual
+
+property in all such work shall be the sole property of the Company.</p>
+
+<h3>10.INDEPENDENT CONTRACTOR</h3>
+<p>Nothing herein shall be construed to create a joint venture or partnership between the parties or an employer-
+employee relationship. You shall be an independent contractor pursuant to this Agreement. Neither party shall
+
+have any express or implied right or authority to assume or create any obligations on behalf of or in the name
+
+of the other party or to bind the other party to any contract or undertaking with any third party. For the
+
+avoidance of doubt, you are not entitled to any employment benefits provided by the Company to its employees.</p>
+
+<h3>11.VARIATION</h3>
+<p>Any alterations, amendments or additions to these Terms and conditions will be communicated to you in writing.</p>
+
+<h3>11.GOVERNING LAW</h3>
+<p>This Agreement shall be governed by and construed in accordance with the laws of Malaysia.</p>
+
+
+
+<h4>Kindly indicate your acceptance of the foregoing by clicking on the checkbox below. We
+
+would like to take this opportunity in welcoming you to our organization.</h4>
 </p>
 
 <p><h4>Thank you.</p></h4>
 
-        </div>
+       </div>
+       <br>
+       <div class="field"
+       <br>
+        <span><%= f.check_box :terms, class:"term" %><p class = "checkbox">&nbsp;&nbsp;I have read and agree with the above terms and conditions</a>.</p></span>
+       </div>
         <br>
-        <div class="field"
-        <br>
-         <span><%= f.check_box :terms, class:"term" %><p class = "checkbox">&nbsp;&nbsp;I have read and agree with the above terms and conditions</a>.</p></span>
-        </div>
-         <br>
-        <div class="actions">
-          <%= f.submit 'Submit my Application', :class => 'btn-primary', data: { confirm: 'By ticking the box, you are agreeing to our Terms & Conditions.'}%>
-        </div>
-    </div>
-  </div>
-  
+       <div class="actions">
+         <%= f.submit 'Submit my Application', :class => 'btn-primary', data: { confirm: 'By ticking the box, you are agreeing to our Terms & Conditions.'}%>
+       </div>
+   </div>
+ </div>
+
 <% end %>
